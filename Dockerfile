@@ -8,6 +8,5 @@ COPY . .
 RUN mvn install && mv target/*.jar java.jar
 ################################################################################
 FROM openjdk:jre-alpine3.8
-WORKDIR /app/
-COPY --from=build /build/java.jar .
+COPY --from=build /build/java.jar /app/
 ################################################################################
